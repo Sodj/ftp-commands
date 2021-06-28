@@ -5,6 +5,10 @@
     $is_allowed = isset($_SESSION['is_allowed']) ? $_SESSION['is_allowed'] : null;
     $password   = isset($_POST   ['password'])   ? $_POST   ['password']   : null;
     $command    = isset($_POST   ['command'])    ? $_POST   ['command']    : null;
+
+    if($password && $password === PASSWORD){
+        $is_allowed = $_SESSION['is_allowed'] = true;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
